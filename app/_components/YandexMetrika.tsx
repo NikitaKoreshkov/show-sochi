@@ -1,9 +1,9 @@
 import Script from "next/script";
 
-const YM_ID = 110632927;
-
-/** Yandex.Metrika — counter 110632927 */
+/** Yandex.Metrika counter id comes from env; a demo build must not run webvisor on visitors. */
 export default function YandexMetrika({ nonce }: { nonce?: string }) {
+  const YM_ID = process.env.NEXT_PUBLIC_YANDEX_METRIKA_ID;
+  if (!YM_ID) return null;
   return (
     <>
       <Script id="yandex-metrika" strategy="afterInteractive" nonce={nonce}>

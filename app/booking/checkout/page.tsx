@@ -18,8 +18,8 @@ export default async function CheckoutPage() {
   const cookieLang = cookieStore.get("lang")?.value;
   const initialLang = cookieLang === "en" ? "en" : "ru";
   const t = (ru: string, en: string) => (initialLang === "ru" ? ru : en);
-  // Cover only from DB settings
-  let coverSrc: string | undefined = undefined;
+  // Cover comes from Settings; the bundled drone frame keeps the panel filled when there is no DB.
+  let coverSrc: string | undefined = "/video/drone-poster.jpg";
   try {
     const settings = await getSettingsMap();
     const media = read<any>(settings, "checkout.media", { images: {} });

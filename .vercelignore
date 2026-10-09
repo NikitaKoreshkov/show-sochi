@@ -1,0 +1,6 @@
+# Local secrets and scratch dirs must never reach the build archive.
+.env
+.env.*
+!.env.example
+.vercel
+temp-*

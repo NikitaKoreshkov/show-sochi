@@ -158,7 +158,7 @@ export default async function RootLayout({
 
     // Detect Safari (exclude Chrome/Android) and mark html
     var ua = navigator.userAgent;
-    var isSafari = /Safari\//.test(ua) && !/Chrome\//.test(ua) && !/Chromium\//.test(ua) && !/Android/.test(ua);
+    var isSafari = /Safari\\//.test(ua) && !/Chrome\\//.test(ua) && !/Chromium\\//.test(ua) && !/Android/.test(ua);
     if (isSafari) { html.setAttribute('data-safari', '1'); }
 
     // Scroll restoration: preserve scroll on hard reloads only (deterministic)

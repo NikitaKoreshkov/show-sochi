@@ -77,7 +77,7 @@ export async function getAboutShowBlocks(
 export async function getAboutExtras(lang: Lang): Promise<AboutExtrasData | undefined> {
   try {
     const settings = await getSettingsMap();
-    const rawExtras = read<any>(settings, "about.addons", {});
+    const rawExtras = read<any>(settings, "about.addons", null);
     if (!rawExtras || typeof rawExtras !== "object") return undefined;
 
     const title = lang === "en" ? rawExtras?.title_en || rawExtras?.title : rawExtras?.title;

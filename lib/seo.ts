@@ -30,8 +30,6 @@ export const YANDEX_MAPS_ORG =
   "https://yandex.ru/maps/org/shousochi/131805703222?si=xuveu79t4ej551g2etpf7ty3t8";
 
 export const DEFAULT_OG_IMAGE = "/logo.png";
-export const DEFAULT_OG_IMAGE_FALLBACK =
-  "/uploads/1ef6ec94-3b83-46e7-9163-4e485f931cad.jpg";
 
 export const DEFAULT_DESCRIPTION_RU =
   "ШоуСочи — амфитеатр на Южном взморье в Сочи. Семейное пенное шоу, кино под звёздами с Dolby Atmos и кулинарные мастер-классы. Билеты онлайн, ул. Калинина, 1/1.";
@@ -164,7 +162,7 @@ export function organizationJsonLd() {
     alternateName: [SITE_NAME_EN, "Show Sochi", "Шоу Сочи"],
     url: SITE_ORIGIN,
     logo: absUrl("/logo.png"),
-    image: [absUrl("/logo.png"), absUrl(DEFAULT_OG_IMAGE_FALLBACK)],
+    image: [absUrl(DEFAULT_OG_IMAGE)],
     description: DEFAULT_DESCRIPTION_RU,
     telephone: SITE_PHONE_E164,
     email: "admin@xn--h1alalj0ac.xn--p1ai",

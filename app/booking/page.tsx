@@ -19,8 +19,8 @@ export default async function BookingPage() {
   const cookieLang = cookieStore.get("lang")?.value;
   const initialLang = cookieLang === "en" ? "en" : "ru";
   const t = (ru: string, en: string) => (initialLang === "ru" ? ru : en);
-  // Read booking cover image from settings (DB only — no local placeholders)
-  let coverSrc: string | undefined = undefined;
+  // Cover comes from Settings; the bundled drone frame keeps the split layout filled when there is no DB.
+  let coverSrc: string | undefined = "/video/drone-poster.jpg";
   let bookingShowTitles: { master?: string; upi?: string; cinema?: string } | undefined = undefined;
   let customTickets: Record<string, Array<{ id: string; label: string; note?: string; priceText: string; price: number }>> | undefined = undefined;
   try {

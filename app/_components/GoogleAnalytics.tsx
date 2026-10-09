@@ -1,9 +1,9 @@
 import Script from "next/script";
 
-const GA_ID = "G-V3Q5KJ9SWF";
-
-/** Google Analytics 4 — stream ShowSochi (G-V3Q5KJ9SWF) */
+/** GA4 stream id comes from env so a public demo build never sends hits to the client's property. */
 export default function GoogleAnalytics({ nonce }: { nonce?: string }) {
+  const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+  if (!GA_ID) return null;
   return (
     <>
       <Script

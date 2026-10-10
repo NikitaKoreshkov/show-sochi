@@ -3,6 +3,7 @@ import Events from "./Events";
 import type { Lang } from "../../lang";
 import { getSettingsMap, read } from "@/lib/settings";
 import { mediaUrl } from "@/lib/media";
+import { demoEventImages } from "@/lib/demoMedia";
 
 export default async function EventsSSR() {
   const cookieStore = await cookies();
@@ -24,5 +25,8 @@ export default async function EventsSSR() {
       });
     }
   } catch {}
+  if (!items) {
+    items = [demoEventImages.master, demoEventImages.upi, demoEventImages.cinema].map((image) => ({ image }));
+  }
   return <Events initial={lang} items={items} />;
 }

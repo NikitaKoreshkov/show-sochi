@@ -4,6 +4,7 @@ import React, { useMemo } from "react";
 import { getTexts } from "../../i18n";
 import { useLang } from "../../lang";
 import AboutShowSection, { type AboutShowData } from "./AboutShowSection";
+import { demoShowCovers } from "@/lib/demoMedia";
 
 export default function YupiShow({ data }: { data?: AboutShowData }) {
   const { lang } = useLang();
@@ -52,7 +53,7 @@ export default function YupiShow({ data }: { data?: AboutShowData }) {
     <AboutShowSection
       id="yupi"
       bookingShow="upi"
-      coverFallback={(data?.cover && String(data.cover).trim()) || undefined}
+      coverFallback={(data?.cover && String(data.cover).trim()) || demoShowCovers.upi}
       title={(data?.title && String(data.title)) || t.title}
       lead={(data?.description && String(data.description)) || t.lead}
       imgAlt={t.imgAlt}

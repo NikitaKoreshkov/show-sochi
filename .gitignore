@@ -44,6 +44,9 @@ next-env.d.ts
 # runtime uploads (keep folder, ignore contents)
 public/uploads/*
 !public/uploads/.gitkeep
+# curated gallery so the demo shows real photos without the client DB
+!public/uploads/demo/
+!public/uploads/demo/*
 
 # large sample videos (keep folder)
 public/video/*

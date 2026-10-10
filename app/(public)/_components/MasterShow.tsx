@@ -4,6 +4,7 @@ import React, { useMemo } from "react";
 import { getTexts } from "../../i18n";
 import { useLang } from "../../lang";
 import AboutShowSection, { type AboutShowData } from "./AboutShowSection";
+import { demoShowCovers } from "@/lib/demoMedia";
 
 export default function MasterShow({ data }: { data?: AboutShowData }) {
   const { lang } = useLang();
@@ -35,7 +36,7 @@ export default function MasterShow({ data }: { data?: AboutShowData }) {
     <AboutShowSection
       id="masters"
       bookingShow="master"
-      coverFallback={(data?.cover && String(data.cover).trim()) || undefined}
+      coverFallback={(data?.cover && String(data.cover).trim()) || demoShowCovers.master}
       title={(data?.title && String(data.title)) || t.title}
       lead={(data?.description && String(data.description)) || t.lead}
       imgAlt={t.imgAlt}

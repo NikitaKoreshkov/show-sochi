@@ -4,6 +4,7 @@ import React, { useMemo } from "react";
 import { getTexts } from "../../i18n";
 import { useLang } from "../../lang";
 import AboutShowSection, { type AboutShowData } from "./AboutShowSection";
+import { demoShowCovers } from "@/lib/demoMedia";
 
 export default function KinoShow({ data }: { data?: AboutShowData }) {
   const { lang } = useLang();
@@ -36,7 +37,7 @@ export default function KinoShow({ data }: { data?: AboutShowData }) {
       id="kino"
       flip
       bookingShow="cinema"
-      coverFallback={(data?.cover && String(data.cover).trim()) || undefined}
+      coverFallback={(data?.cover && String(data.cover).trim()) || demoShowCovers.cinema}
       title={(data?.title && String(data.title)) || t.title}
       lead={(data?.description && String(data.description)) || t.lead}
       imgAlt={t.imgAlt}

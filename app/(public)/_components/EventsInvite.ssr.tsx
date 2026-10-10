@@ -3,6 +3,7 @@ import EventsInvite from "./EventsInvite";
 import type { Lang } from "../../lang";
 import { getSettingsMap, read } from "@/lib/settings";
 import { normalizeMediaList } from "@/lib/media";
+import { demoGallery } from "@/lib/demoMedia";
 
 export default async function EventsInviteSSR() {
   const cookieStore = await cookies();
@@ -14,6 +15,7 @@ export default async function EventsInviteSSR() {
     const normalized = normalizeMediaList(read(settings, "home.carousel", []));
     if (normalized.length) images = normalized;
   } catch {}
+  if (!images) images = demoGallery(lang);
 
   return <EventsInvite initial={lang} images={images} />;
 }
